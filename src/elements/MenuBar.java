@@ -5,7 +5,7 @@ import javax.swing.*;
 public class MenuBar extends JMenuBar {
     private final Habitat _hab;
     private JMenu actionMenu, threadMenu, fileMenu;
-    private JMenuItem start, stop, showTime, hideTime, currentObjects, saveItem, loadItem, consoleItem, clientItem;
+    private JMenuItem start, stop, showTime, hideTime, currentObjects, saveItem, loadItem, consoleItem, clientItem, dbItem;
     private JMenuItem waitPassenger, waitTruck, notifyPassenger, notifyTruck;
     private JMenuItem saveConfig, loadConfig;
     MenuBar(Habitat habitat) {
@@ -55,6 +55,8 @@ public class MenuBar extends JMenuBar {
         clientItem = new JMenuItem("Client options");
         clientItem.addActionListener(actionEvent -> _hab.showClients());
 
+        dbItem = new JMenuItem("Database control");
+        dbItem.addActionListener(actionEvent -> _hab.showDatabase());
 
         actionMenu.add(start);
         actionMenu.add(stop);
@@ -63,6 +65,7 @@ public class MenuBar extends JMenuBar {
         actionMenu.add(currentObjects);
         actionMenu.add(consoleItem);
         actionMenu.add(clientItem);
+        actionMenu.add(dbItem);
 
         threadMenu = new JMenu("Threads");
         add(threadMenu);

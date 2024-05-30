@@ -1,5 +1,6 @@
 package elements;
 
+import DBcontrol.DBframe;
 import Net.ClientFrame;
 import cars.*;
 import ai.*;
@@ -425,6 +426,11 @@ public class Habitat extends JFrame {
         Client.clientFrame.setVisible(true);
     }
 
+    public void showDatabase() {
+        DBframe db_frame = new DBframe(this);
+        db_frame.setVisible(true);
+    }
+
     ////GENERATION////
     private void generateTruck() {
         double rand = Math.random();
@@ -579,6 +585,11 @@ public class Habitat extends JFrame {
     }
     public void updateCarListT(ArrayList<Car> newCars) {
         _cars.removeIf(car -> car instanceof Truck);
+        _cars.addAll(newCars);
+    }
+
+    public void updateCarList(ArrayList<Car> newCars) {
+        _cars.clear();
         _cars.addAll(newCars);
     }
 }

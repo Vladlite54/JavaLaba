@@ -1,5 +1,6 @@
 package Net;
 
+import DBcontrol.Database;
 import elements.Habitat;
 
 public class Main {
